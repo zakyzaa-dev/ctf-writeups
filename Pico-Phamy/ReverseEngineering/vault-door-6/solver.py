@@ -1,0 +1,22 @@
+XOR_KEY = 0x55
+FLAG = ""
+MY_BYTES = [
+    0x3b, 0x65, 0x21, 0xa , 0x38, 0x0 , 0x36, 0x1d,
+    0xa , 0x3d, 0x61, 0x27, 0x11, 0x66, 0x27, 0xa ,
+    0x21, 0x1d, 0x61, 0x3b, 0xa , 0x2d, 0x65, 0x27,
+    0xa , 0x36, 0x33, 0x30, 0x30, 0x63, 0x63, 0x61,
+];
+
+def decrypt():
+    global FLAG
+    for byte in MY_BYTES:
+        FLAG += chr(byte ^ XOR_KEY)
+
+    with open("flag-vault-door-6.txt", "w", encoding="utf-8") as file:
+        file.write("academy{" +FLAG+"}")
+    print("Flag saved in flag-vault-door-6.txt")
+
+decrypt()
+print(f"XOR Hex Bytes: {MY_BYTES}")
+print(f"XOR Key: {XOR_KEY} ({hex(XOR_KEY)})")
+print("Flag: academy{" + FLAG + "}")

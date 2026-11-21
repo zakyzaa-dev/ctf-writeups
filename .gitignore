@@ -1,0 +1,9 @@
+**/flag-*.txt
+**/flag.txt
+flag-*.txt
+flag.txt
+**/win.zip
+**/*.i64
+**/rockyou.txt
+**/*.db
+sync.sh
